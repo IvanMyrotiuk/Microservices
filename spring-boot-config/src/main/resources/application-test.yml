@@ -1,0 +1,14 @@
+server:
+  port: 8084
+
+#taken from default profile
+#my:
+#  greet: Hello
+#  value: Discipline, never give up, hustle, achieving
+#  app:
+#    greet: "${my.greet} to you"
+#    map: "{you:'have the value', you2:'have the power'}"
+
+db:
+   host: " test db host to the app:"
+   port: 123

@@ -1,0 +1,28 @@
+server:
+  port: 8084
+
+my:
+  greet: Hello
+  value: Discipline, never give up, hustle, achieving
+  app:
+    greet: "${my.greet} to you"
+    map: "{you:'have the value', you2:'have the power'}"
+
+db:
+   host: "db host to the app:"
+   port: 123
+
+#along with spring boot actuator we may expose our properties and end points do not do it in prod
+#http://localhost:8084/actuator/configprops
+management.endpoints.web.exposure.include: "*"
+
+#java -Dserver.port=8098 -jar movie-info-service____.jar --spring.profiles.active=test
+#spring.profiles.active: test
+
+#now we may create specific config at repo for our application with the same name as our service name
+spring.application.name: spring-boot-config
+
+#Uri to our config server
+#spring.cloud.config.uri: http://localhost:8888/spring-boot-config-properties-repo it is useless mention specific subfolder. It Does not fetch those properties from that subfolder.
+#Properties is taken from core folder that is mentioned at config server http://localhost:8888  http://localhost:{config.server.port:8888}
+spring.cloud.config.uri: http://localhost:8888

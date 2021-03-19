@@ -58,6 +58,25 @@ we need return something to the client who send the request
 Hystrix is responsible for circuit break
 
 
+Configuration
+We need hold config file separated from code without hardcoded them 
+-Database connections
+-credentials
+-Feature flags
+-Business logic configuration params
+-Spring Boot configuration 
+Without deploying another version of microservices just configure it with externalize system
+Goals
+-Externalized
+-Environment specific(dev,test,QA)
+-Consistent(all different micro services should look at the same one config, talk with one config server which is looking to git repo in order to get specific config)
+config repo is a source for our config server, we do not need to redeploy just push our configuration to that git repo.
+-Version history
+-Real-time management (We want to make a change and have affect on our microservices when all our microservices are runing)
+
+
+
+
 
 
 
